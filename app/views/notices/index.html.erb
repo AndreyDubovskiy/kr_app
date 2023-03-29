@@ -1,0 +1,22 @@
+<h1>Notices</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @notices.each do |notice| %>
+    <tr>
+      <td><%= notice.title %></td>
+      <td><%= notice.text %></td>
+      <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
+      <td><%= link_to 'Destroy', notice_path(notice), method: :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Notice', new_notice_path %>
